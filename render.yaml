@@ -1,0 +1,19 @@
+# One-click deploy of the backend on Render (render.com > New > Blueprint > this repo).
+# Secrets are entered in Render's dashboard, never committed.
+services:
+  - type: web
+    name: jarvis-midas-backend
+    runtime: node
+    plan: free
+    buildCommand: "echo no build"
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: JARVIS_DEVICE_TOKEN
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: JARVIS_MODEL
+        value: claude-sonnet-5-5

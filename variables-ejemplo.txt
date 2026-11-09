@@ -1,0 +1,10 @@
+# Copy to your host's environment variables. Never commit real values.
+ANTHROPIC_API_KEY=sk-ant-...
+# Long random secret; paste the same value into the app (Ajustes > Servidor). Generate: openssl rand -hex 32
+JARVIS_DEVICE_TOKEN=
+# Optional
+JARVIS_MODEL=claude-sonnet-5-5
+JARVIS_MAX_TOKENS=700
+PORT=8787
+# Web app origin(s) allowed to call this server, comma separated (your GitHub Pages URL)
+ALLOWED_ORIGINS=https://TU-USUARIO.github.io
